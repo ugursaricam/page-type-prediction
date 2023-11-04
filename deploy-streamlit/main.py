@@ -105,7 +105,11 @@ if user_input != initial_value:
             highest_resolution_url = urls[-1].strip().split()[0]
             image_url = highest_resolution_url.split('/format:')[0]
             product_name = soup.find("h1", {"class": "product-name best-price-trick"}).get_text(strip=True)
-            price = soup.find("span", {"class": "variant-property-price"}).get_text(strip=True)
+            price = soup.find("span", {"class": "variant-property-price"})
+            if price:
+                price = soup.find("span", {"class": "variant-property-price"}).get_text(strip=True)
+            else:
+                price = soup.find("del", {"id": "originalPrice"}).get_text(strip=True)
 
         elif "www.trendyol.com" in url:
             image_div = soup.find("meta", {"name": "twitter:image:src"})
