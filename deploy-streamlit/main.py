@@ -165,7 +165,7 @@ else:
 
 main_page_col2.markdown(f'<p style="font-size: 34px;color: red;">{result}</p>', unsafe_allow_html=True)
 main_page_col2.write(product_name)
-main_page_col2.markdown(f'<p style="font-weight: bold; font-size: 20px; color: white;">{price}</p>', unsafe_allow_html=True)
+main_page_col2.markdown(f'<p style="font-weight: bold; font-size: 20px;">{price}</p>', unsafe_allow_html=True)
 
 
 
