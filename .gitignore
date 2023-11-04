@@ -161,3 +161,4 @@ cython_debug/
 
 URLs.py
 web_sites.csv
+.idea
