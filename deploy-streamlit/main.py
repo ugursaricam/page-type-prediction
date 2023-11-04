@@ -124,8 +124,11 @@ if user_input != initial_value:
 
         elif "www.hepsiburada.com" in url:
             image_div = soup.find("section", {"class": "mcontent-MerchantRow-2GUPv mcontent-MerchantRow-YDKz1"})
-            img_tag = image_div.find("img")
-            image_url = img_tag['src']
+            if image_div:
+                img_tag = image_div.find("img")
+                image_url = img_tag['src']
+            else:
+                image_url = "https://www.entegi.com/wp-content/themes/entegi/assets/src/img/brand/hepsiburada.png"
             product_name = soup.title.string.strip()
 
 
