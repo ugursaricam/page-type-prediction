@@ -26,7 +26,7 @@ main_page, data_page = st.tabs(["Ana Sayfa", "Hakkında"])
 
 @st.cache_data
 def get_pipeline():
-    pipeline = joblib.load("testinium.joblib")
+    pipeline = joblib.load("testinium2.joblib")
     return pipeline
 
 data_page.write("Loading...")
