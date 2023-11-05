@@ -151,12 +151,21 @@ if user_input != initial_value:
         elif "www.hepsiburada.com" in url:
             image_url = "https://www.entegi.com/wp-content/themes/entegi/assets/src/img/brand/hepsiburada.png"
             product_name = soup.title.string.strip()
-
+            marka = soup.find("a", class_="IFt9fjR3dfhAnos3ylNg")
+            if marka:
+                result = soup.find("a", class_="IFt9fjR3dfhAnos3ylNg", string="Markalar").text
+                result = "Marka"
+            else:
+                result = "Kategori"
 
         elif "www.trendyol.com" in url:
             image_url = "https://www.entegi.com/wp-content/themes/entegi/assets/src/img/brand/trendyol.png"
             product_name = soup.title.string.strip()
-
+            marka = soup.find("div", {"class": "breadcrumb"})
+            if marka:
+                result = "Kategori"
+            else:
+                result = "Marka"
 
         main_page_col1.image(image_url,width=300)
 
@@ -166,7 +175,3 @@ else:
 main_page_col2.markdown(f'<p style="font-size: 34px;color: red;">{result}</p>', unsafe_allow_html=True)
 main_page_col2.write(product_name)
 main_page_col2.markdown(f'<p style="font-weight: bold; font-size: 20px;">{price}</p>', unsafe_allow_html=True)
-
-
-
-
