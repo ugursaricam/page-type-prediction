@@ -24,9 +24,9 @@ main_page, data_page = st.tabs(["Ana Sayfa", "Hakkında"])
 #    df = pd.read_csv("web_sites.csv")
 #    return df
 
-@st.cache_data
+
 def get_pipeline():
-    pipeline = joblib.load("deploy-streamlit/testinium2.joblib")
+    pipeline = joblib.load("testinium.joblib")
     return pipeline
 
 data_page.write("Loading...")
